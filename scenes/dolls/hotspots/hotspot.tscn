@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://b8favmxlm81xf"]
+
+[ext_resource type="Script" uid="uid://bjiqcm8qkimj7" path="res://scenes/dolls/hotspots/scripts/hotspot.gd" id="1_sderc"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_suw3p"]
+
+[node name="Hotspot" type="Area2D" unique_id=1347389964]
+script = ExtResource("1_sderc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1716760827]
+shape = SubResource("CircleShape2D_suw3p")

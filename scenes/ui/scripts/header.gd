@@ -6,9 +6,14 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	Events.mojo_changed.connect(update_mojo_ui)
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+
+	
+func update_mojo_ui(_old_value : int, mojo : int) -> void:
+	mojo_label.text = str(mojo)
+
+
+func _on_temp_shop_pressed() -> void:
+	Events.toggle_upgrade_shop.emit()

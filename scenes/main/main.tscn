@@ -1,9 +1,27 @@
 [gd_scene format=3 uid="uid://br55pe3lbeb68"]
 
 [ext_resource type="PackedScene" uid="uid://biquy5v5crkor" path="res://scenes/ui/header.tscn" id="1_hyk8p"]
+[ext_resource type="Script" uid="uid://dfpnufn5hadpd" path="res://scenes/main/scripts/main.gd" id="1_iuonh"]
+[ext_resource type="PackedScene" uid="uid://drd283mrinhsg" path="res://scenes/upgrade_shop/upgrade_shop.tscn" id="3_k2fmo"]
+[ext_resource type="PackedScene" uid="uid://b1rrd0kqlf37k" path="res://scenes/dolls/doll.tscn" id="4_l3cfh"]
 
 [node name="Main" type="Node2D" unique_id=2038002112]
+script = ExtResource("1_iuonh")
+
+[node name="TestGetMojo" type="Button" parent="." unique_id=2092123552]
+offset_left = 560.0
+offset_top = 600.0
+offset_right = 645.0
+offset_bottom = 631.0
+text = "Give Mojo"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2081455277]
+visible = false
+
+[node name="UpgradeShop" parent="CanvasLayer" unique_id=1449120639 instance=ExtResource("3_k2fmo")]
 
 [node name="Header" parent="CanvasLayer" unique_id=6527242 instance=ExtResource("1_hyk8p")]
+
+[node name="Doll" parent="." unique_id=1430463342 instance=ExtResource("4_l3cfh")]
+
+[connection signal="pressed" from="TestGetMojo" to="." method="_on_test_get_mojo_pressed"]

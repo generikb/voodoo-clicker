@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://drd283mrinhsg"]
+
+[ext_resource type="Script" uid="uid://bxjfgb6u8o6x0" path="res://scenes/upgrade_shop/scripts/upgrade_shop.gd" id="1_gj36l"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a7xgh"]
+bg_color = Color(0.34509805, 0.6, 0.6, 1)
+
+[node name="UpgradeShop" type="Control" unique_id=1449120639]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gj36l")
+
+[node name="Panel" type="Panel" parent="." unique_id=652076065]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_a7xgh")
+
+[node name="TempUpgradeMojoPerClick" type="Button" parent="." unique_id=1366937604]
+layout_mode = 0
+offset_left = 126.0
+offset_top = 347.0
+offset_right = 336.0
+offset_bottom = 378.0
+text = "Upgrade Mojo Per Click +1"
+
+[connection signal="pressed" from="TempUpgradeMojoPerClick" to="." method="_on_temp_upgrade_mojo_per_click_pressed"]

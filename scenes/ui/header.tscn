@@ -9,6 +9,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 script = ExtResource("1_vg8of")
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=942651229]
@@ -17,9 +18,11 @@ layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
 grow_horizontal = 2
+mouse_filter = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer" unique_id=390114015]
 layout_mode = 2
+mouse_filter = 2
 
 [node name="Label" type="Label" parent="PanelContainer/HBoxContainer" unique_id=600807192]
 layout_mode = 2
@@ -28,3 +31,10 @@ text = "Mojo: "
 [node name="MojoLabel" type="Label" parent="PanelContainer/HBoxContainer" unique_id=1276977468]
 layout_mode = 2
 text = "1000"
+
+[node name="TempShop" type="Button" parent="PanelContainer/HBoxContainer" unique_id=591801749]
+layout_mode = 2
+size_flags_horizontal = 10
+text = "Upgrade Shop"
+
+[connection signal="pressed" from="PanelContainer/HBoxContainer/TempShop" to="." method="_on_temp_shop_pressed"]
