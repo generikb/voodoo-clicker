@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://biquy5v5crkor"]
+
+[ext_resource type="Script" uid="uid://ord7krxa6lfq" path="res://scenes/ui/scripts/header.gd" id="1_vg8of"]
+
+[node name="Header" type="Control" unique_id=6527242]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vg8of")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=942651229]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer" unique_id=390114015]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/HBoxContainer" unique_id=600807192]
+layout_mode = 2
+text = "Mojo: "
+
+[node name="MojoLabel" type="Label" parent="PanelContainer/HBoxContainer" unique_id=1276977468]
+layout_mode = 2
+text = "1000"
