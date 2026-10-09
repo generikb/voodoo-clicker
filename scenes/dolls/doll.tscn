@@ -2,28 +2,33 @@
 
 [ext_resource type="Script" uid="uid://b6xay6t6vejjf" path="res://scenes/dolls/scripts/doll.gd" id="1_ai86s"]
 [ext_resource type="Texture2D" uid="uid://d1kw3wjba2ovp" path="res://scenes/dolls/assets/temp_doll.png" id="1_noria"]
-[ext_resource type="PackedScene" uid="uid://b8favmxlm81xf" path="res://scenes/dolls/hotspots/hotspot.tscn" id="3_ll08x"]
 
 [node name="Doll" type="Node2D" unique_id=1430463342]
 script = ExtResource("1_ai86s")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1332135501]
-position = Vector2(600, 337)
+[node name="DollSprite" type="Sprite2D" parent="." unique_id=1332135501]
+unique_name_in_owner = true
 texture = ExtResource("1_noria")
 
-[node name="Hotspots" type="Node2D" parent="." unique_id=625492228]
+[node name="HotspotMarkers" type="Node2D" parent="." unique_id=625492228]
+unique_name_in_owner = true
 
-[node name="Hotspot" parent="Hotspots" unique_id=1347389964 instance=ExtResource("3_ll08x")]
-position = Vector2(601, 145)
+[node name="MarkerHead" type="Marker2D" parent="HotspotMarkers" unique_id=1891704474]
+position = Vector2(-3, -201)
 
-[node name="Hotspot2" parent="Hotspots" unique_id=138086446 instance=ExtResource("3_ll08x")]
-position = Vector2(751, 347)
+[node name="MarkerLeftLeg" type="Marker2D" parent="HotspotMarkers" unique_id=382750241]
+position = Vector2(-92, 194)
 
-[node name="Hotspot3" parent="Hotspots" unique_id=519120870 instance=ExtResource("3_ll08x")]
-position = Vector2(687, 537)
+[node name="MarkerRightArm" type="Marker2D" parent="HotspotMarkers" unique_id=2122492791]
+position = Vector2(149, 5)
 
-[node name="Hotspot4" parent="Hotspots" unique_id=1535675606 instance=ExtResource("3_ll08x")]
-position = Vector2(516, 532)
+[node name="MarkerLeftArm" type="Marker2D" parent="HotspotMarkers" unique_id=1917884161]
+position = Vector2(-158, 5)
 
-[node name="Hotspot5" parent="Hotspots" unique_id=1971839911 instance=ExtResource("3_ll08x")]
-position = Vector2(446, 345)
+[node name="MarkerRightLeg" type="Marker2D" parent="HotspotMarkers" unique_id=466601510]
+position = Vector2(85, 192)
+
+[node name="MarkerHeart" type="Marker2D" parent="HotspotMarkers" unique_id=176030173]
+
+[node name="HotspotsContainer" type="Node2D" parent="." unique_id=880710552]
+unique_name_in_owner = true

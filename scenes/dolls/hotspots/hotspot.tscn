@@ -2,10 +2,27 @@
 
 [ext_resource type="Script" uid="uid://bjiqcm8qkimj7" path="res://scenes/dolls/hotspots/scripts/hotspot.gd" id="1_sderc"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_suw3p"]
+bg_color = Color(0.27832618, 0.7020426, 0.3445297, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_suw3p"]
 
 [node name="Hotspot" type="Area2D" unique_id=1347389964]
 script = ExtResource("1_sderc")
 
+[node name="Panel" type="Panel" parent="." unique_id=1001188521]
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 11.0
+offset_bottom = 10.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_suw3p")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1716760827]
 shape = SubResource("CircleShape2D_suw3p")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]

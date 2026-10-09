@@ -29,5 +29,7 @@ func spend_mojo(cost: int) -> void:
 	if not can_afford(cost):
 		return
 	mojo -= cost
-	
+
+func add_mojo(amount: int) -> void:
+	mojo += amount
 	

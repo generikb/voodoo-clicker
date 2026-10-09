@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://eyjgkcdos0jd"]
+
+[ext_resource type="Script" uid="uid://co2h11hswscs7" path="res://scripts/upgrades.gd" id="1_t141y"]
+[ext_resource type="Script" uid="uid://bjuykqmvxulan" path="res://resources/upgrade_data.gd" id="2_dbpup"]
+[ext_resource type="Resource" uid="uid://bddxpd3f406qr" path="res://resources/upgrades/mojo_per_hotspot.tres" id="3_7tn3v"]
+
+[node name="Upgrades" type="Node2D" unique_id=1974161232]
+script = ExtResource("1_t141y")
+all_upgrades = Array[ExtResource("2_dbpup")]([ExtResource("3_7tn3v")])

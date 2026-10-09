@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://drd283mrinhsg"]
 
 [ext_resource type="Script" uid="uid://bxjfgb6u8o6x0" path="res://scenes/upgrade_shop/scripts/upgrade_shop.gd" id="1_gj36l"]
+[ext_resource type="PackedScene" uid="uid://dctyoxqxwaopd" path="res://scenes/upgrade_shop/upgrade_node.tscn" id="2_c7bk0"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a7xgh"]
 bg_color = Color(0.34509805, 0.6, 0.6, 1)
@@ -30,5 +31,9 @@ offset_top = 347.0
 offset_right = 336.0
 offset_bottom = 378.0
 text = "Upgrade Mojo Per Click +1"
+
+[node name="MojoPerClick" parent="." unique_id=1427678178 instance=ExtResource("2_c7bk0")]
+layout_mode = 0
+anchors_preset = 0
 
 [connection signal="pressed" from="TempUpgradeMojoPerClick" to="." method="_on_temp_upgrade_mojo_per_click_pressed"]

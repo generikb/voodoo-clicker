@@ -1,5 +1,8 @@
 extends Node2D
 
+@export var temp_doll : DollData
+
+@onready var doll_spot: Marker2D = %DollSpot
 
 
 # Called when the node enters the scene tree for the first time.
@@ -7,5 +10,10 @@ func _ready() -> void:
 	pass
 
 
-func _on_test_get_mojo_pressed() -> void:
-	Global.currency_manager.mojo += Global.upgrades.get_upgrade(Util.UPGRADES.BASE_HOTSPOT_MOJO_PER_CLICK)
+
+
+
+func _on_spawn_doll_button_pressed() -> void:
+	var new_doll : Doll = temp_doll.doll_type.instantiate()
+	doll_spot.add_child(new_doll)
+	new_doll.setup(temp_doll)

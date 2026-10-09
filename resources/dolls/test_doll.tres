@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="DollData" format=3 uid="uid://cbufn77131lys"]
+
+[ext_resource type="PackedScene" uid="uid://b1rrd0kqlf37k" path="res://scenes/dolls/doll.tscn" id="1_t7x7o"]
+[ext_resource type="Script" uid="uid://cxakbkc3s1mu4" path="res://resources/doll_data.gd" id="2_ee0yd"]
+[ext_resource type="Texture2D" uid="uid://d1kw3wjba2ovp" path="res://scenes/dolls/assets/temp_doll.png" id="2_ucqhw"]
+[ext_resource type="PackedScene" uid="uid://b8favmxlm81xf" path="res://scenes/dolls/hotspots/hotspot.tscn" id="3_ucqhw"]
+
+[resource]
+script = ExtResource("2_ee0yd")
+doll_id = "test_doll"
+doll_name = "Test Doll"
+doll_texture = ExtResource("2_ucqhw")
+hotspot_type = ExtResource("3_ucqhw")
+metadata/_custom_type_script = "uid://cxakbkc3s1mu4"

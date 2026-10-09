@@ -5,6 +5,11 @@ enum GAME_STAGES{
 	PLAYING
 }
 
+enum UPGRADE_TYPES{
+	ADD, # base + (boost * level)
+	MULTIPLY # base + pow(boost, level)
+}
+
 enum UPGRADES{
 	BASE_HOTSPOT_MOJO_PER_CLICK
 }
