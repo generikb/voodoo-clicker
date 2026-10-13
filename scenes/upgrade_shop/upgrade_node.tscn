@@ -1,11 +1,22 @@
 [gd_scene format=3 uid="uid://dctyoxqxwaopd"]
 
 [ext_resource type="Script" uid="uid://2d0yfchbsumv" path="res://scenes/upgrade_shop/scripts/upgrade_node.gd" id="1_1jag5"]
+[ext_resource type="Texture2D" uid="uid://bnh5mdqf70npj" path="res://scenes/dolls/assets/temp_icon.png" id="1_qpsfg"]
+[ext_resource type="Texture2D" uid="uid://ciouk3x2a0qxa" path="res://scenes/dolls/assets/temp_icon2.png" id="2_eag6k"]
 
 [node name="UpgradeNode" type="TextureButton" unique_id=1427678178]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+offset_right = 100.0
+offset_bottom = 100.0
+texture_normal = ExtResource("1_qpsfg")
+texture_disabled = ExtResource("2_eag6k")
 script = ExtResource("1_1jag5")
+
+[node name="LevelLabel" type="Label" parent="." unique_id=696223543]
+unique_name_in_owner = true
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "0/10"
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

@@ -33,6 +33,7 @@ layout_mode = 2
 text = "1000"
 
 [node name="TempShop" type="Button" parent="PanelContainer/HBoxContainer" unique_id=591801749]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 10
 text = "Upgrade Shop"

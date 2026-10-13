@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://bxjfgb6u8o6x0" path="res://scenes/upgrade_shop/scripts/upgrade_shop.gd" id="1_gj36l"]
 [ext_resource type="PackedScene" uid="uid://dctyoxqxwaopd" path="res://scenes/upgrade_shop/upgrade_node.tscn" id="2_c7bk0"]
+[ext_resource type="Resource" uid="uid://bddxpd3f406qr" path="res://resources/upgrades/mojo_per_hotspot.tres" id="3_kaww8"]
+[ext_resource type="Resource" uid="uid://btdfnqswk7djr" path="res://resources/upgrades/hotspot_bonus_mojo_chance.tres" id="4_45ju2"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a7xgh"]
 bg_color = Color(0.34509805, 0.6, 0.6, 1)
@@ -24,16 +26,25 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_a7xgh")
 
-[node name="TempUpgradeMojoPerClick" type="Button" parent="." unique_id=1366937604]
-layout_mode = 0
-offset_left = 126.0
-offset_top = 347.0
-offset_right = 336.0
-offset_bottom = 378.0
-text = "Upgrade Mojo Per Click +1"
-
-[node name="MojoPerClick" parent="." unique_id=1427678178 instance=ExtResource("2_c7bk0")]
-layout_mode = 0
+[node name="UpgradeNodes" type="Control" parent="." unique_id=1767870378]
+unique_name_in_owner = true
 anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
-[connection signal="pressed" from="TempUpgradeMojoPerClick" to="." method="_on_temp_upgrade_mojo_per_click_pressed"]
+[node name="MojoPerClick" parent="UpgradeNodes" unique_id=1427678178 instance=ExtResource("2_c7bk0")]
+layout_mode = 0
+offset_left = 548.0
+offset_top = 273.0
+offset_right = 548.0
+offset_bottom = 273.0
+upgrade_data = ExtResource("3_kaww8")
+
+[node name="BonusMojoChance" parent="UpgradeNodes" unique_id=423014456 node_paths=PackedStringArray("prereq_node") instance=ExtResource("2_c7bk0")]
+layout_mode = 0
+offset_left = 771.0
+offset_top = 273.0
+offset_right = 871.0
+offset_bottom = 373.0
+upgrade_data = ExtResource("4_45ju2")
+prereq_node = NodePath("../MojoPerClick")

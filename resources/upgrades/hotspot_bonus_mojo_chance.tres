@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="UpgradeData" format=3 uid="uid://btdfnqswk7djr"]
+
+[ext_resource type="Resource" uid="uid://bddxpd3f406qr" path="res://resources/upgrades/mojo_per_hotspot.tres" id="1_lpwdr"]
+[ext_resource type="Script" uid="uid://bjuykqmvxulan" path="res://resources/upgrade_data.gd" id="1_ytq0e"]
+[ext_resource type="Texture2D" uid="uid://bnh5mdqf70npj" path="res://scenes/dolls/assets/temp_icon.png" id="3_4w8nv"]
+
+[resource]
+script = ExtResource("1_ytq0e")
+upgrade_id = 1
+upgrade_name = "Mojo Bonus"
+upgrade_description = "% Chance for bonus Mojo on HotSpots"
+upgrade_icon = ExtResource("3_4w8nv")
+base_cost = 50.0
+max_level = 10
+base_value = 0.0
+boost_per_level = 5.0
+prereq_upgrade = ExtResource("1_lpwdr")
+prereq_level = 2
+tooltip_suffix = "%"
+metadata/_custom_type_script = "uid://bjuykqmvxulan"
