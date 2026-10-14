@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://06vie10n2xqi"]
+
+[ext_resource type="Script" uid="uid://dm5w8nbkm5ch0" path="res://scenes/gadgets/spirit_hand/scripts/spirit_box.gd" id="1_2gsvh"]
+
+[node name="Spirit Box" type="Button" unique_id=1731652507]
+text = "Spirit Hand Box"
+script = ExtResource("1_2gsvh")
+
+[connection signal="button_down" from="." to="." method="_on_button_down"]
+[connection signal="button_up" from="." to="." method="_on_button_up"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://bjsh8ld3uuywu"]
+
+[ext_resource type="Script" uid="uid://c6g8p7vc2cbod" path="res://scenes/gadgets/spirit_hand/scripts/spirit_hand.gd" id="1_d046q"]
+[ext_resource type="Texture2D" uid="uid://qrln3y4ennuq" path="res://scenes/gadgets/spirit_hand/assets/temp_spirit_hand.png" id="2_tlers"]
+
+[node name="SpiritHand" type="Node2D" unique_id=1770603244]
+script = ExtResource("1_d046q")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1808045144]
+position = Vector2(8, 136)
+texture = ExtResource("2_tlers")
+
+[node name="Fingertip" type="Marker2D" parent="." unique_id=1028734232]
+unique_name_in_owner = true

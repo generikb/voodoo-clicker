@@ -1,5 +1,5 @@
-class_name CurrencyMananger
-extends Node
+class_name CurrencyManager
+extends RefCounted
 
 var mojo : int = 0:
 	set(new_value):

@@ -1,5 +1,5 @@
 class_name GameManager
-extends Node
+extends RefCounted
 
 
 var doll_level_progress = {

@@ -4,6 +4,8 @@
 [ext_resource type="Script" uid="uid://dfpnufn5hadpd" path="res://scenes/main/scripts/main.gd" id="1_iuonh"]
 [ext_resource type="Resource" uid="uid://cbufn77131lys" path="res://resources/dolls/test_doll.tres" id="2_6q06x"]
 [ext_resource type="PackedScene" uid="uid://drd283mrinhsg" path="res://scenes/upgrade_shop/upgrade_shop.tscn" id="3_k2fmo"]
+[ext_resource type="PackedScene" uid="uid://06vie10n2xqi" path="res://scenes/gadgets/spirit_hand/spirit_box.tscn" id="3_ow5a4"]
+[ext_resource type="PackedScene" uid="uid://bjsh8ld3uuywu" path="res://scenes/gadgets/spirit_hand/spirit_hand.tscn" id="4_hujxm"]
 
 [node name="Main" type="Node2D" unique_id=2038002112]
 script = ExtResource("1_iuonh")
@@ -16,14 +18,25 @@ offset_right = 636.0
 offset_bottom = 630.0
 text = "Spawn Doll"
 
+[node name="Spirit Box" parent="." unique_id=1731652507 node_paths=PackedStringArray("spirit_hand") instance=ExtResource("3_ow5a4")]
+offset_left = 997.0
+offset_top = 590.0
+offset_right = 1125.0
+offset_bottom = 621.0
+spirit_hand = NodePath("../SpiritHand")
+
+[node name="DollSpot" type="Marker2D" parent="." unique_id=1904388195]
+unique_name_in_owner = true
+position = Vector2(579, 321)
+
+[node name="SpiritHand" parent="." unique_id=1770603244 node_paths=PackedStringArray("doll_spot") instance=ExtResource("4_hujxm")]
+position = Vector2(1067, 319)
+doll_spot = NodePath("../DollSpot")
+
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2081455277]
 
 [node name="UpgradeShop" parent="CanvasLayer" unique_id=1449120639 instance=ExtResource("3_k2fmo")]
 
 [node name="Header" parent="CanvasLayer" unique_id=6527242 instance=ExtResource("1_hyk8p")]
-
-[node name="DollSpot" type="Marker2D" parent="." unique_id=1904388195]
-unique_name_in_owner = true
-position = Vector2(579, 321)
 
 [connection signal="pressed" from="SpawnDollButton" to="." method="_on_spawn_doll_button_pressed"]

@@ -7,3 +7,6 @@ extends Node
 
 
 @warning_ignore("unused_signal") signal doll_leveled_up
+
+# Gadget Signals
+@warning_ignore("unused_signal") signal spirit_hand_missed

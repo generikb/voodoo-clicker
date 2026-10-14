@@ -15,6 +15,7 @@ func _ready() -> void:
 	upgrade_nodes.draw.connect(_draw_upgrade_lines)
 
 
+# Auto connect lines between upgrade nodes (need to polish later)
 func _draw_upgrade_lines() -> void:
 	for node in upgrade_nodes.get_children():
 		if node is UpgradeNode and node.prereq_node != null and node.visible:
