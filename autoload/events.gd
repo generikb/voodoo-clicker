@@ -10,3 +10,5 @@ extends Node
 
 # Gadget Signals
 @warning_ignore("unused_signal") signal spirit_hand_missed
+
+@warning_ignore("unused_signal") signal spawn_mojo_drops(amount : int, spawn_pos : Vector2)

@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://b01mhkgnt05r8"]
+
+[ext_resource type="Script" uid="uid://s05bw1rg6p6a" path="res://scenes/dolls/hotspots/scripts/finger_hotspot.gd" id="1_ktbrn"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kd4mi"]
+bg_color = Color(0.27832618, 0.7020426, 0.3445297, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5ms0t"]
+
+[node name="FingerHotSpot" type="Area2D" unique_id=612144606]
+script = ExtResource("1_ktbrn")
+metadata/_custom_type_script = "uid://bjiqcm8qkimj7"
+
+[node name="Panel" type="Panel" parent="." unique_id=2015775692]
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 11.0
+offset_bottom = 10.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_kd4mi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1955230099]
+shape = SubResource("CircleShape2D_5ms0t")

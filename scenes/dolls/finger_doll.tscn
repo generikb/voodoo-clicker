@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://eh5swfhcefaq"]
+
+[ext_resource type="Script" uid="uid://cjg7rttljoxre" path="res://scenes/dolls/scripts/finger_doll.gd" id="1_cbl67"]
+[ext_resource type="Texture2D" uid="uid://w0iueyyyc6x8" path="res://scenes/dolls/assets/temp_finger_doll.png" id="2_t4r6i"]
+[ext_resource type="PackedScene" uid="uid://b01mhkgnt05r8" path="res://scenes/dolls/hotspots/finger_hotspot.tscn" id="3_cbl67"]
+[ext_resource type="Texture2D" uid="uid://c36xac4dkjjwb" path="res://scenes/dolls/assets/temp_static_marker.png" id="4_o6aju"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_suw3p"]
+radius = 22.19
+
+[node name="FingerDoll" type="Node2D" unique_id=1806151371]
+script = ExtResource("1_cbl67")
+
+[node name="FingerDollManager" type="Node2D" parent="." unique_id=1433809204]
+unique_name_in_owner = true
+
+[node name="FingerDollSprite" type="Sprite2D" parent="FingerDollManager" unique_id=2014743676]
+position = Vector2(-24, 125)
+texture = ExtResource("2_t4r6i")
+
+[node name="FingerHotSpot" parent="FingerDollManager" unique_id=612144606 instance=ExtResource("3_cbl67")]
+unique_name_in_owner = true
+
+[node name="StaticTargetMarker" type="Area2D" parent="." unique_id=744723854]
+unique_name_in_owner = true
+scale = Vector2(0.56, 0.56)
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticTargetMarker" unique_id=995183713]
+texture = ExtResource("4_o6aju")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticTargetMarker" unique_id=1780116975]
+shape = SubResource("CircleShape2D_suw3p")
+
+[connection signal="input_event" from="StaticTargetMarker" to="." method="_on_static_target_marker_input_event"]

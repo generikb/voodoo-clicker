@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://doly467ek8t8f"]
+
+[ext_resource type="Script" uid="uid://ckirib4a27sqm" path="res://scenes/mojo_drops/scripts/mojo_drop.gd" id="1_0rq6q"]
+[ext_resource type="Texture2D" uid="uid://bpkpx37jxddx2" path="res://scenes/gadgets/spirit_hand/assets/temp_mojo_drop.png" id="2_0rq6q"]
+
+[node name="MojoDrop" type="Node2D" unique_id=1203110983]
+script = ExtResource("1_0rq6q")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1319825060]
+texture = ExtResource("2_0rq6q")
