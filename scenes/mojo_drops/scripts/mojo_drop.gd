@@ -18,7 +18,7 @@ func _process(delta: float) -> void:
 	if is_magnetized:
 		var mouse_pos = get_global_mouse_position()
 		
-		magnet_speed += 500.0 * delta
+		magnet_speed += 500.0 * delta #speeds up over time, cool effect
 		
 		self.global_position = self.global_position.move_toward(mouse_pos, magnet_speed * delta)
 

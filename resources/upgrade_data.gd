@@ -41,7 +41,7 @@ func get_tooltip(current_level : int) -> String:
 	var current_value = get_boost(current_level)
 	var next_value = get_boost(current_level + 1)
 	
-	return "%s\n%s\n%.1f%s -> %.1f%s\nCost: %1.f" % [
+	return "%s\n%s\n%.2f%s -> %.2f%s\nCost: %1.f" % [
 		upgrade_name,
 		upgrade_description,
 		current_value, tooltip_suffix,

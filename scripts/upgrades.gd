@@ -3,9 +3,10 @@ extends RefCounted
 
 @export var all_upgrades : Array[UpgradeData] = [
 	preload("res://resources/upgrades/mojo_per_hotspot.tres"),
-	preload("res://resources/upgrades/hotspot_bonus_mojo_chance.tres")
-	
-	
+	preload("res://resources/upgrades/hotspot_bonus_mojo_chance.tres"),
+	preload("res://resources/upgrades/spirit_hand_unlocked.tres"),
+	preload("res://resources/upgrades/spirit_hand_speed.tres"),
+	preload("res://resources/upgrades/spirit_hand_accuracy.tres")
 
 ]
 
@@ -53,6 +54,7 @@ func purchase_upgrade(data : UpgradeData) -> bool:
 	if Global.currency_manager.can_afford(cost):
 		player_levels[data.upgrade_id] = current_level + 1
 		Global.currency_manager.spend_mojo(cost)
+		Events.upgrade_purchased.emit(data.upgrade_id)
 		print("Level has been updated to: " , player_levels[data.upgrade_id])
 		return true
 	

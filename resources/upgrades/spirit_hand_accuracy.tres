@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="UpgradeData" format=3 uid="uid://bw8bisyfc3qb0"]
+
+[ext_resource type="Resource" uid="uid://dqylgeki8th2m" path="res://resources/upgrades/spirit_hand_unlocked.tres" id="1_3aqux"]
+[ext_resource type="Script" uid="uid://bjuykqmvxulan" path="res://resources/upgrade_data.gd" id="1_rkoc3"]
+[ext_resource type="Texture2D" uid="uid://bnh5mdqf70npj" path="res://scenes/dolls/assets/temp_icon.png" id="2_x3giu"]
+
+[resource]
+script = ExtResource("1_rkoc3")
+upgrade_id = 4
+upgrade_name = "Spirit Hand Accuracy"
+upgrade_description = "Reduces chance of missed pokes"
+upgrade_icon = ExtResource("2_x3giu")
+max_level = 10
+base_value = 0.5
+boost_per_level = 0.01
+prereq_upgrade = ExtResource("1_3aqux")
+metadata/_custom_type_script = "uid://bjuykqmvxulan"

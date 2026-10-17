@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="UpgradeData" format=3 uid="uid://c6itmql7ks23p"]
+
+[ext_resource type="Script" uid="uid://bjuykqmvxulan" path="res://resources/upgrade_data.gd" id="1_1nblj"]
+[ext_resource type="Resource" uid="uid://dqylgeki8th2m" path="res://resources/upgrades/spirit_hand_unlocked.tres" id="1_i0ov6"]
+[ext_resource type="Texture2D" uid="uid://bnh5mdqf70npj" path="res://scenes/dolls/assets/temp_icon.png" id="2_qld4h"]
+
+[resource]
+script = ExtResource("1_1nblj")
+upgrade_id = 3
+upgrade_name = "Spirit Hand Speed"
+upgrade_description = "Increase the speed of the Spirit Hand"
+upgrade_icon = ExtResource("2_qld4h")
+base_cost = 10.0
+max_level = 10
+boost_per_level = 0.1
+prereq_upgrade = ExtResource("1_i0ov6")
+tooltip_suffix = "%"
+metadata/_custom_type_script = "uid://bjuykqmvxulan"

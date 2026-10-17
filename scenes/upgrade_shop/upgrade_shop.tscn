@@ -4,6 +4,9 @@
 [ext_resource type="PackedScene" uid="uid://dctyoxqxwaopd" path="res://scenes/upgrade_shop/upgrade_node.tscn" id="2_c7bk0"]
 [ext_resource type="Resource" uid="uid://bddxpd3f406qr" path="res://resources/upgrades/mojo_per_hotspot.tres" id="3_kaww8"]
 [ext_resource type="Resource" uid="uid://btdfnqswk7djr" path="res://resources/upgrades/hotspot_bonus_mojo_chance.tres" id="4_45ju2"]
+[ext_resource type="Resource" uid="uid://c6itmql7ks23p" path="res://resources/upgrades/spirit_hand_speed.tres" id="5_v224d"]
+[ext_resource type="Resource" uid="uid://dqylgeki8th2m" path="res://resources/upgrades/spirit_hand_unlocked.tres" id="5_xnfx3"]
+[ext_resource type="Resource" uid="uid://bw8bisyfc3qb0" path="res://resources/upgrades/spirit_hand_accuracy.tres" id="6_xnfx3"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a7xgh"]
 bg_color = Color(0.34509805, 0.6, 0.6, 1)
@@ -48,3 +51,30 @@ offset_right = 871.0
 offset_bottom = 373.0
 upgrade_data = ExtResource("4_45ju2")
 prereq_node = NodePath("../MojoPerClick")
+
+[node name="SpiritHandUnlocked" parent="UpgradeNodes" unique_id=1921700599 node_paths=PackedStringArray("prereq_node") instance=ExtResource("2_c7bk0")]
+layout_mode = 0
+offset_left = 753.0
+offset_top = 108.0
+offset_right = 853.0
+offset_bottom = 208.0
+upgrade_data = ExtResource("5_xnfx3")
+prereq_node = NodePath("../BonusMojoChance")
+
+[node name="SpiritHandSpeed" parent="UpgradeNodes" unique_id=1960046635 node_paths=PackedStringArray("prereq_node") instance=ExtResource("2_c7bk0")]
+layout_mode = 0
+offset_left = 587.0
+offset_top = 46.0
+offset_right = 687.0
+offset_bottom = 146.0
+upgrade_data = ExtResource("5_v224d")
+prereq_node = NodePath("../SpiritHandUnlocked")
+
+[node name="SpiritHandAccuracy" parent="UpgradeNodes" unique_id=1880080581 node_paths=PackedStringArray("prereq_node") instance=ExtResource("2_c7bk0")]
+layout_mode = 0
+offset_left = 896.0
+offset_top = 37.0
+offset_right = 996.0
+offset_bottom = 137.0
+upgrade_data = ExtResource("6_xnfx3")
+prereq_node = NodePath("../SpiritHandUnlocked")

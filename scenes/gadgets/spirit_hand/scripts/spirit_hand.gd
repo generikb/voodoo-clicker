@@ -2,6 +2,7 @@ class_name SpiritHand
 extends Node2D
 
 @export var doll_spot : Marker2D
+@export var base_movement_speed : float = 500.0 # Pixels per second
 
 var can_miss : bool = true
 
@@ -16,14 +17,9 @@ var spirit_hand_active : bool = false :
 var starting_position : Vector2
 var hand_tween : Tween
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	starting_position = global_position
 
-
-func _on_power_changed(is_powered: bool) -> void:
-	spirit_hand_active = is_powered
-	print("spirit hand active: ", spirit_hand_active)
 
 func spirit_hand_on() -> void:
 	auto_poke()
@@ -47,14 +43,22 @@ func auto_poke() -> void:
 	
 	hand_tween = create_tween()
 	
-	var accuracy = 0.5 # UPDATE THIS WITH SPIRIT HAND ACCURACY!!!
+	# sets a consistent speed based on spirit hand speed upgrade value (d = r * t)
+	var speed_multipier : float = Global.upgrades.get_upgrade_value(Util.UPGRADES.SPIRIT_HAND_SPEED)
+	var current_speed : float = base_movement_speed * speed_multipier
+	
+	var distance : float = self.global_position.distance_to(current_hotspot.global_position)
+	var move_duration : float = maxf(0.1, distance / current_speed)
+	
+	# sets accuracy based on spirit hand accuracy upgrade value and determines if hit or not
+	var accuracy : float = Global.upgrades.get_upgrade_value(Util.UPGRADES.SPIRIT_HAND_ACCURACY)
 	
 	var is_hit = randf() <= accuracy or not can_miss
 	
 	if is_hit:	
-		hand_tween.tween_property(self, "global_position", current_hotspot.global_position, 0.8) #UPDATE WITH SPIRIT HAND SPEED!
+		hand_tween.tween_property(self, "global_position", current_hotspot.global_position, move_duration)
 		hand_tween.tween_callback(current_hotspot.take_hit.bind(1))
-		hand_tween.tween_interval(0.3) #UPDATE WITH SPIRIT HAND SPEED!!!
+		hand_tween.tween_interval(0.3 / speed_multipier)
 		hand_tween.tween_callback(func(): can_miss = true)
 		hand_tween.tween_callback(auto_poke)
 		
@@ -63,11 +67,11 @@ func auto_poke() -> void:
 		var approach_pos = global_position.lerp(current_hotspot.global_position, 0.9)
 		var miss_pos = get_miss_position(current_hotspot.global_position)
 		
-		hand_tween.tween_property(self, "global_position", approach_pos, 0.7)
+		hand_tween.tween_property(self, "global_position", approach_pos, move_duration)
 		hand_tween.tween_property(self, "global_position", miss_pos, .1).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
 		hand_tween.tween_callback(func(): Events.spirit_hand_missed.emit())
 		hand_tween.tween_interval(0.5)
-		hand_tween.tween_callback(func(): can_miss = false)
+		hand_tween.tween_callback(func(): can_miss = false) # sets it so you can only miss once per hotspot
 		hand_tween.tween_callback(auto_poke)
 		print("you missed!")
 	

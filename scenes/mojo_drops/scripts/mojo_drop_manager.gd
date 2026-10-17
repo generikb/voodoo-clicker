@@ -9,7 +9,7 @@ func _ready() -> void:
 	Events.spawn_mojo_drops.connect(spawn_mojo_drops)
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+# Mojo bits get vacuumed up by the mouse cursor
 func _process(_delta: float) -> void:
 	var mouse_pos = get_global_mouse_position()
 	for mojo_drop : MojoDrop in self.get_children():
@@ -21,15 +21,19 @@ func _process(_delta: float) -> void:
 			Global.currency_manager.add_mojo(mojo_drop.value)
 			mojo_drop.queue_free()
 
-
+# spawns between 3-6 mojo bits (to prevent performance hits)
 func spawn_mojo_drops(total_mojo : int, spawn_pos : Vector2) -> void:
-	var drop_count : int = randi_range(3, 6)
-	var value_per_drop : int = max(1, total_mojo / drop_count)
+	if total_mojo <= 0:
+		return
 	
-	var drop_texture : Texture2D = get_drop_texture_by_value(value_per_drop)
+	var drop_count : int = min(total_mojo, randi_range(3, 6))
+	var base_value : int = total_mojo / drop_count
+	var remainder : int = total_mojo % drop_count
 	
 	for i in drop_count:
-		spawn_mojo_drop(drop_texture, value_per_drop, spawn_pos)
+		var drop_value : int = base_value + (1 if i < remainder else 0)
+		var drop_texture : Texture2D = get_drop_texture_by_value(drop_value)
+		spawn_mojo_drop(drop_texture, drop_value, spawn_pos)
 
 
 func get_drop_texture_by_value(amount : int) -> Texture2D:
